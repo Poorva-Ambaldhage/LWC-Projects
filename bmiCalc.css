@@ -1,0 +1,60 @@
+/*.root{
+    
+}*/
+.box{
+    background: #08091a;
+    text-align: center;
+    color: antiquewhite;
+    max-width: 420px;
+    margin: auto;
+    padding: 16px 10px;
+    border-radius: 36px;
+}
+
+.info{
+    background: #0C2340;
+    padding: 16px 16px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
+    font-size: 14px;
+}
+
+.bmi_app{
+    
+    background-image: url(/sfsites/c/resource/bmiCalcBackgroundImage);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+h1{
+    font-weight: bold;
+    font-size: 34px;
+    padding: 20px 0;
+}
+
+h2{
+    font-size:24px;
+    color: #FF00FF;
+
+}
+
+label{
+    padding: 10px;
+    text-align: center;
+    color: antiquewhite;
+    font-size: 14px;
+    
+}
+
+input{
+    font-size: 14px;
+    color: #0C2340;
+    padding: 8 px;
+}
+
+button{
+    padding: 0px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
