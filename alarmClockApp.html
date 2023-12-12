@@ -1,0 +1,45 @@
+<template>
+    <lightning-card>
+    <div class="alarm-clock">
+        <h1>Alarm clock</h1>
+        <img src={clockImg} alt="Clock Image" height="200px" width="200px" class={isImgShake}>
+        <h2>{currentTime}</h2>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <c-clock-drop-down label="Hour(s)" options={arrayOfHours} unique-id="select-hour" onchildtoparenthandler={optionHandler}>Hour(s)</c-clock-drop-down>
+            </div>
+            <div class="slds-col">
+                <!--<div class="slds-form-element">
+                    <label class="slds-form-element__label" for="select-min">Minute(s)</label>
+                    <div class="slds-form-element__control">
+                      <div class="slds-select_container">
+                        <select class="slds-select" id="select-min">
+                          <option value="">Select…</option>
+                          <template for:each={arrayOfMin} for:item="min">
+                            <option key={min} value={min}>{min}</option>
+                          </template>
+                        </select>
+                      </div>
+                    </div>
+                  </div>-->
+             <!--Note : As we know the above commented componenet is used thrice for hrs,min and ampm dropdown in the componenet 
+              hence we create a child componenet known as clockDropDown and we are reusing the componenet in parent componenet (alarmClockApp)
+              As clockDropDown is child componenet it is not exposed to any page and internally called by parent componenet-->     
+              <c-clock-drop-down label="Minute(s)" options={arrayOfMins} unique-id="select-min" onchildtoparenthandler={optionHandler}>Minute(s)</c-clock-drop-down>
+            </div>
+
+            <div class="slds-col">
+              <c-clock-drop-down label="AM/PM" options={ampm} unique-id="select-mer" onchildtoparenthandler={optionHandler}>AM/PM</c-clock-drop-down>
+            </div>
+
+        </div>
+         <template if:false={alarmSet}>
+          <button class="slds-button slds-button_outline-brand" onclick={setAlarmHandler} disabled={isFieldsSelected}>Set Alarm</button>
+         </template>
+
+         <template if:true={alarmSet}>
+          <button class="slds-button slds-button_outline-brand" onclick={clearAlarmHandler}>Clear Alarm</button>
+         </template>
+        </div>
+    </lightning-card>
+</template>
